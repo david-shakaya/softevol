@@ -9,48 +9,225 @@
   <body>
     <header class="header">
       <div class="container">
-        <a class="header__logo" href="./index.html">
-          <img
-            class="header__img"
-            src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31"
-            alt="logo"
-            width="108px"
-          />
-        </a>
-        <a href="https://www.microsoft.com/en-us/surface">Surface</a>
-        <nav class="header__nav">
-          <ul class="header__btn-list">
-            <li class="header__btn-item">
-              <button class="header__btn-btn">Computers</button>
+        <div class="header__wrapper">
+          <button class="header__mob-burger"></button>
+          <a class="header__logo" href="./index.html">
+            <img
+              class="header__img"
+              src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31"
+              alt="logo"
+              width="108px"
+            />
+          </a>
+          <a
+            class="header__nav-link"
+            href="https://www.microsoft.com/en-us/surface"
+            >Surface</a
+          >
+          <nav class="header__nav">
+            <ul class="display-none header__menu-list">
+              <li class="header__menu-item">
+                <button class="header__item-btn">Computers</button>
+              </li>
+              <li class="header__menu-item">
+                <button class="header__item-btn">Accessories</button>
+              </li>
+              <li class="header__menu-item">
+                <button class="header__item-btn">Shop now</button>
+              </li>
+              <li class="header__menu-item">
+                <a
+                  class="header__menu-item-btn"
+                  href="https://support.microsoft.com/surface"
+                  >Support</a
+                >
+              </li>
+              <li class="header__menu-item">
+                <button class="header__item-btn">Moore</button>
+              </li>
+              <li class="header__menu-item">
+                <button class="header__item-btn">All Microsoft</button>
+              </li>
+            </ul>
+          </nav>
+          <ul class="header__icon-btn_list">
+            <li class="header__icon-btn_item">
+              <button class="header__icon-btn_btn header__icon-search">
+                &#xE721;
+              </button>
             </li>
-            <li class="header__btn-item">
-              <button class="header__btn-btn">Accessories</button>
+            <li class="header__icon-btn_item">
+              <button class="header__icon-btn_btn header__icon-cart">
+                &#xE7BF;
+              </button>
             </li>
-            <li class="header__btn-item">
-              <button class="header__btn-btn">Shop now</button>
-            </li>
-            <li class="header__btn-item">
-              <a
-                class="header__btn-btn"
-                href="https://support.microsoft.com/surface"
-                >Support</a
-              >
-            </li>
-            <li class="header__btn-item">
-              <button class="header__btn-btn">Moore</button>
-            </li>
-            <li class="header__btn-item">
-              <button class="header__btn-btn">All Microsoft</button>
+            <li class="header__icon-btn_item">
+              <button class="header__icon-btn_btn header__icon-user"></button>
             </li>
           </ul>
-        </nav>
+        </div>
       </div>
     </header>
   </body>
 </html>
 
+<!-- Стили -->
+<style>
+  html {
+    box-sizing: border-box;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial;
+  }
+
+  li {
+    list-style: none;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+  button {
+    border: none;
+    background-color: transparent;
+    outline-color: transparent;
+  }
+  .display-none {
+    display: none;
+  }
+
+  /* .container {
+      padding-left: 16px;
+      padding-right: 16px;
+    } */
+
+  .header {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background: #fff;
+    border-bottom: 1px solid rgb(230, 230, 230);
+  }
+  .header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .header__mob-burger {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    padding-top: 6px;
+    padding-bottom: 8px;
+    margin: 1px;
+  }
+  .header__mob-burger::before {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    font-size: 20px;
+  }
+
+  .header__mob-burger:focus {
+    outline: 2px dashed #000;
+  }
+
+  .header__logo {
+    position: relative;
+    margin-left: calc(50vw - 105px);
+    margin-right: auto;
+    top: -1px;
+    width: 116px;
+    height: 44px;
+    padding-top: 10px;
+    padding-bottom: 12px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
+
+  .header__icon-user {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' stroke='%23707070'%3E%3Cg class='mectrl_stroke' fill='none'%3E%3Ccircle cx='32' cy='32' r='30.25' stroke-width='1.5'/%3E%3Cg transform='matrix(.9 0 0 .9 10.431 10.431)' stroke-width='2'%3E%3Ccircle cx='24.25' cy='18' r='9'/%3E%3Cpath d='M11.2 40a1 1 0 1126.1 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+  }
+
+  .header__icon-btn_list {
+    display: flex;
+  }
+
+  .header__icon-search {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    font-size: 20px;
+  }
+  .header__icon-cart {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    font-size: 20px;
+  }
+
+  .header__nav-link {
+    order: -1;
+    position: absolute;
+    align-self: flex-end;
+    top: 54px;
+    display: flex;
+    align-items: center;
+    margin-left: 1;
+    height: 33px;
+
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 1px;
+    width: 104px;
+
+    font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial,
+      sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+  }
+
+  .header__nav-link:focus {
+    outline: 2px dashed #000;
+  }
+  .header__nav-link::after {
+    content: "";
+    font-family: "Segoe MDL2 Assets";
+    font-weight: 700;
+    height: 12px;
+    font-size: 12px;
+    align-self: revert;
+    top: 2px;
+    position: relative;
+    padding-left: 11px;
+  }
+</style>
+
 <!-- ПРИМЕР -->
-<!-- <button>&#xE700;</button>
+<!-- <button>&#xE721;</button>
     <style>
       button {
         font-family: "Segoe MDL2 Assets";
@@ -60,3 +237,5 @@
         font-size: 20px;
       }
     </style> -->
+<!-- E721 -->
+<!-- E700 -->

@@ -25,7 +25,7 @@
             >Surface</a
           >
           <nav class="header__nav">
-            <ul class="display-none header__menu-list">
+            <ul class="header__menu-list">
               <li class="header__menu-item">
                 <button class="header__item-btn">Computers</button>
               </li>
@@ -52,10 +52,10 @@
           </nav>
           <ul class="header__icon-btn_list">
             <li class="header__icon-btn_item">
-              <button class="header__icon-btn_btn header__icon-search">
-                &#xE721;
-              </button>
+              <button class="header__icon-btn_btn header__icon-search"></button>
+              <span class="visibiliti-hidden"></span>
             </li>
+
             <li class="header__icon-btn_item">
               <button class="header__icon-btn_btn header__icon-cart">
                 &#xE7BF;
@@ -101,19 +101,23 @@
     border: none;
     background-color: transparent;
     outline-color: transparent;
+    padding: 0px;
+    margin: 0px;
   }
-  .display-none {
-    display: none;
+  .header__menu-list {
+    @media screen and (max-width: 859px) {
+      display: none;
+    }
   }
 
-  /* .container {
-      padding-left: 16px;
-      padding-right: 16px;
-    } */
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 
   .header {
     padding-top: 2px;
-    padding-bottom: 2px;
+    padding-bottom: 1px;
     background: #fff;
     border-bottom: 1px solid rgb(230, 230, 230);
   }
@@ -159,6 +163,9 @@
   }
 
   .header__icon-user {
+    position: absolute;
+    top: 11px;
+    right: 16px;
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' stroke='%23707070'%3E%3Cg class='mectrl_stroke' fill='none'%3E%3Ccircle cx='32' cy='32' r='30.25' stroke-width='1.5'/%3E%3Cg transform='matrix(.9 0 0 .9 10.431 10.431)' stroke-width='2'%3E%3Ccircle cx='24.25' cy='18' r='9'/%3E%3Cpath d='M11.2 40a1 1 0 1126.1 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     width: 32px;
     height: 32px;
@@ -167,27 +174,50 @@
 
   .header__icon-btn_list {
     display: flex;
+    align-items: center;
   }
 
   .header__icon-search {
-    content: "";
-    font-family: "Segoe MDL2 Assets";
+    position: absolute;
+    left: 54px;
+    top: 10px;
+    width: 16px;
+    height: 16px;
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-top: 3px;
-    font-size: 20px;
-  }
-  .header__icon-cart {
-    content: "";
-    font-family: "Segoe MDL2 Assets";
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-top: 3px;
-    font-size: 20px;
+    padding: 16px;
   }
 
+  .header__icon-search::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    font-family: "Segoe MDL2 Assets";
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .header__icon-search:focus {
+    outline: 2px dashed #000;
+  }
+
+  .header__icon-cart {
+    position: absolute;
+    top: 1px;
+    right: 57px;
+    font-family: "Segoe MDL2 Assets";
+    display: inline-block;
+    font-size: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 11px;
+    padding-right: 20px;
+    margin: 1px;
+  }
+
+  .header__icon-cart:focus {
+    outline: 1px dashed #000;
+  }
   .header__nav-link {
     order: -1;
     position: absolute;
@@ -223,6 +253,12 @@
     top: 2px;
     position: relative;
     padding-left: 11px;
+  }
+  .visibiliti-hidden {
+    width: 0.1px;
+    height: 0.1px;
+    display: inline-block;
+    visibility: hidden;
   }
 </style>
 

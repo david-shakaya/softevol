@@ -43,7 +43,7 @@
                 >
               </li>
               <li class="header__menu-item">
-                <button class="header__item-btn">Moore</button>
+                <button class="header__item-btn">More</button>
               </li>
               <li class="header__menu-item">
                 <button class="header__item-btn">All Microsoft</button>
@@ -104,161 +104,229 @@
     padding: 0px;
     margin: 0px;
   }
-  .header__menu-list {
-    @media screen and (max-width: 859px) {
-      display: none;
+
+  @media screen and (min-width: 860px) {
+    .container {
+      padding-left: 24px;
+      padding-right: 24px;
     }
   }
 
-  .container {
-    padding-left: 24px;
-    padding-right: 24px;
+  @media screen and (max-width: 859px) {
+    .header {
+      padding-top: 2px;
+      padding-bottom: 1px;
+      background: #fff;
+      border-bottom: 1px solid rgb(230, 230, 230);
+    }
+    .header__menu-list {
+      display: none;
+    }
+
+    .header__mob-burger {
+      width: 48px;
+      height: 48px;
+      padding: 0;
+      padding-top: 6px;
+      padding-bottom: 8px;
+      margin: 1px;
+    }
+    .header__mob-burger::before {
+      content: "";
+      font-family: "Segoe MDL2 Assets";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-top: 3px;
+      font-size: 20px;
+    }
+
+    .header__mob-burger:focus {
+      outline: 2px dashed #000;
+    }
+
+    .header__icon-search {
+      position: absolute;
+      left: 54px;
+      top: 10px;
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      padding: 16px;
+    }
+
+    .header__icon-search::after {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 8px;
+      font-family: "Segoe MDL2 Assets";
+      display: inline-block;
+      font-size: 16px;
+    }
+
+    .header__icon-search:focus {
+      outline: 2px dashed #000;
+    }
+
+    .header__logo {
+      position: relative;
+      margin-left: calc(50vw - 109px);
+      margin-right: auto;
+      top: -1px;
+      width: 116px;
+      height: 44px;
+      padding-top: 10px;
+      padding-bottom: 12px;
+      margin-top: 1px;
+      margin-bottom: 1px;
+    }
+
+    .header__icon-user {
+      position: absolute;
+      top: 11px;
+      right: 16px;
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' stroke='%23707070'%3E%3Cg class='mectrl_stroke' fill='none'%3E%3Ccircle cx='32' cy='32' r='30.25' stroke-width='1.5'/%3E%3Cg transform='matrix(.9 0 0 .9 10.431 10.431)' stroke-width='2'%3E%3Ccircle cx='24.25' cy='18' r='9'/%3E%3Cpath d='M11.2 40a1 1 0 1126.1 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      width: 32px;
+      height: 32px;
+      background-color: transparent;
+    }
+
+    .header__icon-btn_list {
+      display: flex;
+      align-items: center;
+      height: 0px;
+    }
+
+    .header__icon-cart {
+      position: absolute;
+      top: 1px;
+      right: 57px;
+      font-family: "Segoe MDL2 Assets";
+      display: inline-block;
+      font-size: 16px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      padding-left: 11px;
+      padding-right: 20px;
+      margin: 1px;
+    }
+
+    .header__icon-cart:focus {
+      outline: 1px dashed #000;
+    }
+    .header__nav-link {
+      order: -1;
+      position: absolute;
+      align-self: flex-end;
+      top: 54px;
+      display: flex;
+      align-items: center;
+      margin-left: 1;
+      height: 33px;
+
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-left: 1px;
+      width: 104px;
+
+      font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial,
+        sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: rgb(0, 0, 0);
+    }
+
+    .header__nav-link:focus {
+      outline: 2px dashed #000;
+    }
+    .header__nav-link::after {
+      content: "";
+      font-family: "Segoe MDL2 Assets";
+      font-weight: 700;
+      height: 12px;
+      font-size: 12px;
+      align-self: revert;
+      top: 2px;
+      position: relative;
+      padding-left: 11px;
+    }
+    .visibiliti-hidden {
+      width: 0.1px;
+      height: 0.1px;
+      display: inline-block;
+      visibility: hidden;
+    }
   }
 
-  .header {
-    padding-top: 2px;
-    padding-bottom: 1px;
-    background: #fff;
-    border-bottom: 1px solid rgb(230, 230, 230);
-  }
-  .header__wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
+  /* Стили для планшета */
 
-  .header__mob-burger {
-    width: 48px;
-    height: 48px;
-    padding: 0;
-    padding-top: 6px;
-    padding-bottom: 8px;
-    margin: 1px;
-  }
-  .header__mob-burger::before {
-    content: "";
-    font-family: "Segoe MDL2 Assets";
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-top: 3px;
-    font-size: 20px;
-  }
+  @media screen and (min-width: 860px) {
+    /* .header {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    } */
+    .header__wrapper {
+      display: flex;
+      align-items: center;
+    }
 
-  .header__mob-burger:focus {
-    outline: 2px dashed #000;
-  }
+    .header__logo {
+      padding-top: 16px;
+      padding-right: 6px;
+      padding-bottom: 16px;
+      padding-left: 10px;
+      margin: -3px;
+    }
 
-  .header__logo {
-    position: relative;
-    margin-left: calc(50vw - 105px);
-    margin-right: auto;
-    top: -1px;
-    width: 116px;
-    height: 44px;
-    padding-top: 10px;
-    padding-bottom: 12px;
-    margin-top: 1px;
-    margin-bottom: 1px;
-  }
+    .header__nav-link {
+      font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial,
+        sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: black;
+    }
 
-  .header__icon-user {
-    position: absolute;
-    top: 11px;
-    right: 16px;
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' stroke='%23707070'%3E%3Cg class='mectrl_stroke' fill='none'%3E%3Ccircle cx='32' cy='32' r='30.25' stroke-width='1.5'/%3E%3Cg transform='matrix(.9 0 0 .9 10.431 10.431)' stroke-width='2'%3E%3Ccircle cx='24.25' cy='18' r='9'/%3E%3Cpath d='M11.2 40a1 1 0 1126.1 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    width: 32px;
-    height: 32px;
-    background-color: transparent;
-  }
+    .header__nav-link::before {
+      content: "";
+      display: inline-block;
+      width: 2px;
+      height: 23px;
+      background-color: black;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    /* .header__nav-link:focus {
+      outline: 1px dashed currentColor;
+    } */
+    .header__menu-list {
+      display: flex;
+    }
+    .header__mob-burger {
+      display: none;
+    }
 
-  .header__icon-btn_list {
-    display: flex;
-    align-items: center;
-  }
+    .header__icon-btn_list {
+      display: flex;
+    }
+    .header__icon-cart {
+      font-family: "Segoe MDL2 Assets";
+      display: inline-block;
+      font-size: 16px;
+    }
+    .header__icon-user {
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' stroke='%23707070'%3E%3Cg class='mectrl_stroke' fill='none'%3E%3Ccircle cx='32' cy='32' r='30.25' stroke-width='1.5'/%3E%3Cg transform='matrix(.9 0 0 .9 10.431 10.431)' stroke-width='2'%3E%3Ccircle cx='24.25' cy='18' r='9'/%3E%3Cpath d='M11.2 40a1 1 0 1126.1 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      width: 32px;
+      height: 32px;
+      background-color: transparent;
+    }
 
-  .header__icon-search {
-    position: absolute;
-    left: 54px;
-    top: 10px;
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    padding: 16px;
-  }
-
-  .header__icon-search::after {
-    content: "";
-    position: absolute;
-    left: 5px;
-    top: 8px;
-    font-family: "Segoe MDL2 Assets";
-    display: inline-block;
-    font-size: 16px;
-  }
-
-  .header__icon-search:focus {
-    outline: 2px dashed #000;
-  }
-
-  .header__icon-cart {
-    position: absolute;
-    top: 1px;
-    right: 57px;
-    font-family: "Segoe MDL2 Assets";
-    display: inline-block;
-    font-size: 16px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    padding-left: 11px;
-    padding-right: 20px;
-    margin: 1px;
-  }
-
-  .header__icon-cart:focus {
-    outline: 1px dashed #000;
-  }
-  .header__nav-link {
-    order: -1;
-    position: absolute;
-    align-self: flex-end;
-    top: 54px;
-    display: flex;
-    align-items: center;
-    margin-left: 1;
-    height: 33px;
-
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: 1px;
-    width: 104px;
-
-    font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial,
-      sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: rgb(0, 0, 0);
-  }
-
-  .header__nav-link:focus {
-    outline: 2px dashed #000;
-  }
-  .header__nav-link::after {
-    content: "";
-    font-family: "Segoe MDL2 Assets";
-    font-weight: 700;
-    height: 12px;
-    font-size: 12px;
-    align-self: revert;
-    top: 2px;
-    position: relative;
-    padding-left: 11px;
-  }
-  .visibiliti-hidden {
-    width: 0.1px;
-    height: 0.1px;
-    display: inline-block;
-    visibility: hidden;
+    .header__icon-search::after {
+      content: "";
+      font-family: "Segoe MDL2 Assets";
+      display: inline-block;
+      font-size: 16px;
+    }
   }
 </style>
 

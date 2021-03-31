@@ -19,38 +19,52 @@
               width="108px"
             />
           </a>
+          <span class="header__surf-el"></span>
           <a
             class="header__nav-link"
             href="https://www.microsoft.com/en-us/surface"
-            >Surface</a
-          >
+            >Surface
+          </a>
+
           <nav class="header__nav">
             <ul class="header__menu-list">
               <li class="header__menu-item">
                 <button class="header__item-btn">Computers</button>
               </li>
               <li class="header__menu-item">
-                <button class="header__item-btn">Accessories</button>
+                <button class="display-none-business header__item-btn">
+                  Computers for Business
+                </button>
+              </li>
+
+              <li class="header__menu-item">
+                <button class="display-none-accessor header__item-btn">
+                  Accessories
+                </button>
               </li>
               <li class="header__menu-item">
-                <button class="header__item-btn">Shop now</button>
+                <button class="display-none-shop header__item-btn">
+                  Shop now
+                </button>
               </li>
               <li class="header__menu-item">
                 <a
-                  class="header__menu-item-btn"
+                  class="display-none-support header__item-btn"
                   href="https://support.microsoft.com/surface"
                   >Support</a
                 >
               </li>
-              <li class="header__menu-item">
+              <li class="display-none-more header__menu-item">
                 <button class="header__item-btn">More</button>
-              </li>
-              <li class="header__menu-item">
-                <button class="header__item-btn">All Microsoft</button>
               </li>
             </ul>
           </nav>
           <ul class="header__icon-btn_list">
+            <li class="header__menu-item">
+              <button class="display-none-all-microsoft header__item-btn">
+                All Microsoft
+              </button>
+            </li>
             <li class="header__icon-btn_item">
               <button class="header__icon-btn_btn header__icon-search"></button>
               <span class="visibiliti-hidden"></span>
@@ -111,6 +125,12 @@
       padding-right: 24px;
     }
   }
+  @media screen and (min-width: 1084px) {
+    .container {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+  }
 
   @media screen and (max-width: 859px) {
     .header {
@@ -147,7 +167,7 @@
 
     .header__icon-search {
       position: absolute;
-      left: 54px;
+      left: 63px;
       top: 10px;
       width: 16px;
       height: 16px;
@@ -171,15 +191,21 @@
 
     .header__logo {
       position: relative;
-      margin-left: calc(50vw - 109px);
+      margin-left: calc(50vw - 113px);
       margin-right: auto;
       top: -1px;
       width: 116px;
       height: 44px;
-      padding-top: 10px;
-      padding-bottom: 12px;
+      padding-top: 15px;
+      padding-bottom: 8px;
       margin-top: 1px;
       margin-bottom: 1px;
+      padding-right: 4px;
+      padding-left: 4px;
+    }
+
+    .header__logo:focus {
+      outline: 1px dashed #000;
     }
 
     .header__icon-user {
@@ -257,48 +283,138 @@
       display: inline-block;
       visibility: hidden;
     }
+    .display-none-all-microsoft {
+      display: none;
+    }
   }
 
   /* Стили для планшета */
 
   @media screen and (min-width: 860px) {
-    /* .header {
-      padding-top: 8px;
-      padding-bottom: 8px;
-    } */
+    .header {
+      margin-bottom: 2px;
+      /* padding-bottom: 2px; */
+    }
     .header__wrapper {
       display: flex;
       align-items: center;
     }
 
     .header__logo {
-      padding-top: 16px;
-      padding-right: 6px;
-      padding-bottom: 16px;
-      padding-left: 10px;
-      margin: -3px;
+      padding-top: 10px;
+      padding-right: 16px;
+      padding-bottom: 11px;
+      padding-left: 8px;
+      margin-top: 4px;
+      margin-left: 2px;
+      margin-bottom: 2px;
+    }
+
+    .header__logo:focus {
+      outline: 1px dashed #000;
     }
 
     .header__nav-link {
+      position: relative;
       font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial,
         sans-serif;
       font-size: 18px;
       font-weight: 600;
       color: black;
+
+      padding-bottom: 13px;
+      padding-top: 11px;
+      padding-right: 5px;
+      padding-left: 7px;
     }
 
-    .header__nav-link::before {
+    .header__nav-link:focus {
+      outline: 1px dashed #000;
+    }
+    .header__menu-item {
+      position: relative;
+    }
+
+    .header__item-btn {
+      cursor: pointer;
+      color: #262626;
+      padding-bottom: 16px;
+      padding-top: 14px;
+      padding-left: 11px;
+      padding-right: 21px;
+      margin-right: -2px;
+      border: 1px solid transparent;
+      font-family: inherit;
+      font-size: 13px;
+      margin-top: 1px;
+      margin-left: 4px;
+    }
+    .header__item-btn::after {
+      content: "";
+      font-family: "Segoe MDL2 Assets";
+      position: absolute;
+      font-size: 8px;
+      display: inline-block;
+      color: currentColor;
+      font-weight: 700;
+      padding-top: 7px;
+      margin-left: 8px;
+    }
+
+    .header__item-btn:hover::before,
+    .header__item-btn:focus::before {
+      content: "";
+      top: 35px;
+      left: 17px;
+      position: absolute;
+      display: inline-block;
+      width: calc(100% - 35px);
+      height: 2px;
+      background-color: black;
+      padding: 1px;
+    }
+
+    .header__item-btn:focus {
+      outline: 1px dashed #000;
+    }
+
+    .display-none-business.header__item-btn {
+      padding-bottom: 16px;
+      padding-top: 14px;
+      padding-left: 12px;
+      padding-right: 21px;
+    }
+    .display-none-accessor.header__item-btn {
+      padding-left: 10px;
+    }
+    .display-none-shop.header__item-btn {
+      padding-left: 9px;
+    }
+
+    .header__nav-link:hover::after {
+      content: "";
+      top: 34px;
+      left: 7px;
+      position: absolute;
+      display: inline-block;
+      width: calc(100% - 12px);
+      height: 2px;
+      background-color: black;
+    }
+
+    .header__surf-el::after {
       content: "";
       display: inline-block;
       width: 2px;
       height: 23px;
       background-color: black;
-      margin-left: 20px;
-      margin-right: 20px;
+      margin-left: 9px;
+      margin-right: 13px;
+      margin-top: 4px;
     }
     /* .header__nav-link:focus {
-      outline: 1px dashed currentColor;
-    } */
+        outline: 1px dashed currentColor;
+      } */
     .header__menu-list {
       display: flex;
     }
@@ -308,6 +424,9 @@
 
     .header__icon-btn_list {
       display: flex;
+    }
+    .header__icon-btn_btn {
+      cursor: pointer;
     }
     .header__icon-cart {
       font-family: "Segoe MDL2 Assets";
@@ -326,6 +445,73 @@
       font-family: "Segoe MDL2 Assets";
       display: inline-block;
       font-size: 16px;
+    }
+
+    .display-none-business,
+    .display-none-accessor,
+    .display-none-shop,
+    .display-none-support {
+      display: none;
+    }
+
+    .header__icon-btn_list {
+      margin-left: auto;
+    }
+
+    .header__icon-btn_list {
+      align-items: center;
+      margin-right: -10px;
+    }
+    .header__icon-btn_item {
+      margin-right: 10px;
+      margin-bottom: 1px;
+    }
+    .header__icon-search {
+      padding: 9px;
+      margin-right: 3px;
+      margin-top: 2px;
+    }
+    .header__icon-user {
+      margin: 8px;
+    }
+
+    .header__icon-btn_list > .header__menu-item {
+      margin-right: 27px;
+    }
+
+    .display-none-all-microsoft:focus {
+      outline: 1px dashed black;
+    }
+
+    .header__icon-search:focus {
+      outline: 1px dashed black;
+    }
+  }
+
+  @media screen and (min-width: 928px) {
+    .display-none-business {
+      display: inline;
+    }
+  }
+  @media screen and (min-width: 1028px) {
+    .display-none-accessor {
+      display: inline;
+    }
+  }
+  @media screen and (min-width: 1190px) {
+    .display-none-shop {
+      display: inline;
+    }
+    .display-none-more {
+      display: none;
+    }
+
+    .display-none-support.header__item-btn {
+      display: inline-block;
+      margin-left: -2px;
+    }
+    .display-none-support.header__item-btn::after {
+      display: none;
     }
   }
 </style>
